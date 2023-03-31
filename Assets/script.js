@@ -1,5 +1,4 @@
-// First question pops up after timer starts. 
-// Questions/Answers defined as objects
+// When I click on start, the timer starts and the first question pops up.
 // After question is answered, another question pops up.
 // If question is answered incorrectly, time is subtracted from the clock.
 // If all questions are answered or time reaches 0, then game is over. 
@@ -8,23 +7,30 @@
 
 var qanda = {
     qOne: "What House is Harry Potter in?",
-    aOne: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+    oOne: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+    aOne: "Gryffindor",
     qTwo: "What is Harry's cousin's name?",
-    aTwo: ["Diggles", "Doofy", "Derrick", "Dudley"],
+    oTwo: ["Diggles", "Doofy", "Derrick", "Dudley"],
+    aTwo: "Dudley",
     qThree: "What kind of pet does Harry own?",
-    aThree: ["Bat", "Owl", "Cat", "Toad"],
+    oThree: ["Bat", "Owl", "Cat", "Toad"],
+    aThree: "Owl",
     qFour: "Which of these is NOT one of Albus Dumbledore's middle names?",
-    aFour: ["Percival", "Wulfric", "Montgomery", "Brian"],
+    oFour: ["Percival", "Wulfric", "Montgomery", "Brian"],
+    aFour: "Montgomery",
     qFive: "What is the name of the school Harry attends?",
-    aFive: ["Hogwash", "Hogwarts", "Warthog", "Pigfarts"],
+    oFive: ["Hogwash", "Hogwarts", "Warthog", "Pigfarts"],
+    aFive: "Hogwarts",
 
 };
 
+var quiz = document.getElementById("qanda");
 var timeEl = document.getElementById("timer");
 var startBtn = document.getElementById("btn");
-console.log(startBtn)
+var finScore = document.getElementById("finalscore");
+var highScore = document.getElementById("highscores");
 
-function startQuiz () {
+function startTimer () {
 
     var secondsLeft = 100;
 
@@ -38,21 +44,13 @@ function startQuiz () {
         }
         
     }, 1000);
+    
 };
 
+function startQuiz() {
+   
+    
+}
+
+startBtn.addEventListener("click", startTimer);
 startBtn.addEventListener("click", startQuiz);
-
-var qanda = {
-    qOne: "What House is Harry Potter in?",
-    aOne: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
-    qTwo: "What is Harry's cousin's name?",
-    aTwo: ["Diggles", "Doofy", "Derrick", "Dudley"],
-    qThree: "What kind of pet does Harry own?",
-    aThree: ["Bat", "Owl", "Cat", "Toad"],
-    qFour: "Which of these is NOT one of Albus Dumbledore's middle names?",
-    aFour: ["Percival", "Wulfric", "Montgomery", "Brian"],
-    qFive: "What is the name of the school Harry attends?",
-    aFive: ["Hogwash", "Hogwarts", "Warthog", "Pigfarts"],
-
-};
-
