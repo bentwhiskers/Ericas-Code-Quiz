@@ -118,6 +118,7 @@ function endGame() {
     document.getElementById("qanda").style.display = "none";
 
     document.getElementById("status").style.display = "none";
+    document.getElementById("form").removeAttribute("hidden");
 
     
 
