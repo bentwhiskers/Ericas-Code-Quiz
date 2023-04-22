@@ -40,7 +40,7 @@ var secondsLeft = 100;
 var initials = document.getElementById("initials");
 var saveBtn = document.getElementById("save");
 var scoreList = JSON.parse(localStorage.getItem("highscores")) || [];
-
+var scoreCounter = document.querySelector(".score");
 
 
 function startTimer () {
@@ -133,6 +133,9 @@ function showScoresList() {
     }
 }
 
+function getScore() {
+    var storedScore = localStorage.getItem("")
+}
 
 startBtn.addEventListener("click", startTimer);
 startBtn.addEventListener("click", startQuiz);
