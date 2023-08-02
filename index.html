@@ -12,21 +12,27 @@
 
     <div class="container"> 
         <nav class="row">
-            <button id="highscores" class="col d-flex justify-content-center btn btn-outline-secondary btn-sm">View Highscores</button>
-            <p id="timer" class="col d-flex justify-content-end">100</p>
+            <button id="highscores" class="col-sm-6 d-flex justify-content-center btn btn-outline-danger btn-sm">View Highscores</button>
+            <p id="timer" class="col-sm-6 d-flex justify-content-end">100</p>
         </nav>
     </div> 
-
-    <header id="intro" class="container text-center mt-4">
-        <h1>Harry Potter Quiz</h1>
-        <p>Try to answer these multiple choice questions about Harry Potter in the amount of time given. Wrong answers will result in loss of House points!</p>
-        <button type="button" id="btn" class="btn btn-primary">Start</button>
-    </header>
-
+    
+    <div class="row">
+        <header id="intro" class="col-sm-12 text-center mt-4">
+            <h1 class="fw-bolder">Harry Potter Quiz</h1>
+            <p class="fw-lighter fst-italic"><small>Are you smarter than a muggle?</small></p>
+            <p class="fw-normal">Try to answer these multiple choice questions about Harry Potter in the amount of time given. Wrong answers will result in loss of House points!</p>
+                <button type="button" id="btn" class="btn btn-danger">Start</button>
+        </header>
+    </div>
+    
+    <div class="row">
+        <img class="col-sm-12 mt-2" src="//images.ctfassets.net/usf1vwtuqyxm/4d4wKz36Q0gaCqCaYOoMO/97247a8f6084290dd4c9887f5274c4d2/Hogwarts_Crest.jpg?w=914&amp;q=70&amp;fm=jpg" alt="Hogwarts Crest by the designers Mina Lima">
+    </div>
+    
     <main class="container">
         <div class="row"> 
-            <section id="qanda" class="column">
-            </section>
+            <section id="qanda" class="column"></section>
             <br>
             <hr>
             <br>
