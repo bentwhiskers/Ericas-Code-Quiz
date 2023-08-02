@@ -119,14 +119,14 @@ function endGame() {
 
     document.getElementById("status").style.display = "none";
     document.getElementById("form").removeAttribute("hidden");
+}
 
-    
-
-
-    
+// function to show final score of user to user
+function showFinalScore {
+    if ()
 }
 // function to show highscores in a list using a for loop over the scoreList
-function showScoresList() {
+function showHighScoresList() {
     for (var i = 0; i < scoreList.length; i++) {
         var list = document.createElement("li");
         list.textContent = scoreList[i];
