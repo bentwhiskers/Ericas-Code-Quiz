@@ -1,9 +1,7 @@
-
- 
-
 // If all questions are answered or time reaches 0, then game is over. 
 // When game is over, score can be saved in "highscores" area.
 
+// array of questions 
 var questions = [
     {
         q: "What House is Harry Potter in?",
@@ -49,9 +47,10 @@ function startTimer () {
         if (secondsLeft > 1) {
             timeEl.textContent = secondsLeft;
             secondsLeft--;
-        } else {
+        } else if (qCounter >= questions.length || secondsLeft <= 0) {
             timeEl.textContent = " ";
             clearInterval(timeInterval);
+            showFinalScore();
         }
         
     }, 1000);
@@ -78,7 +77,7 @@ function showQuestions() {
             if (event.target.textContent !== questions[qCounter].a) {
                 wrongAnswer();
             } else if (event.target.textContent == questions[qCounter].a && event.target.textContent == questions[4].a) {
-                endGame();
+                saveScore();
             } else {
                 correctAnswer();
             }
@@ -106,7 +105,7 @@ function wrongAnswer() {
 
 };
 
-function endGame() {
+function saveScore() {
     var data = {
         initials: initials.value,
         score: secondsLeft,
@@ -119,17 +118,24 @@ function endGame() {
 
     document.getElementById("status").style.display = "none";
     document.getElementById("form").removeAttribute("hidden");
+    
+    showHighScoresList();
 }
 
 // function to show final score of user to user
-function showFinalScore {
-    if ()
+function showFinalScore() {
+    document.getElementById("qanda").style.display = "none";
+    document.getElementById("status").style.display = "none";
+    document.getElementById("form").removeAttribute("hidden");
+    finScore.textContent = "Your score: " + secondsLeft;
 }
 // function to show highscores in a list using a for loop over the scoreList
 function showHighScoresList() {
+    highScore.innerHTML = "";
     for (var i = 0; i < scoreList.length; i++) {
         var list = document.createElement("li");
-        list.textContent = scoreList[i];
+        list.textContent = scoreList[i].initials + ": " + scoreList[i].score;
+        highScore.appendChild(list);
     }
 }
 
@@ -139,4 +145,4 @@ function getScore() {
 
 startBtn.addEventListener("click", startTimer);
 startBtn.addEventListener("click", startQuiz);
-saveBtn.addEventListener("click", endGame);
+saveBtn.addEventListener("click", saveScore);
