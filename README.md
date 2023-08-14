@@ -13,7 +13,7 @@ This is a timed quiz designed around J.K. Rowling's Harry Potter. Correct answer
 ## Usage
 To use, go to: https://bentwhiskers.github.io/Harry-Potter-Quiz/
 
-<image src='./images/quizScreenShot.png' alt='img of Hogwarts crest' />
+<image src='./images/quizScreenShot.png' alt='screen shot of quiz' />
 
 ## Credits
 

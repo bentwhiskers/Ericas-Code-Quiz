@@ -47,7 +47,7 @@ function startTimer () {
         if (secondsLeft > 1) {
             timeEl.textContent = secondsLeft;
             secondsLeft--;
-        } else if (qCounter >= questions.length || secondsLeft <= 0) {
+        } else if (qCounter >= questions.length || secondsLeft >= 0) {
             timeEl.textContent = " ";
             clearInterval(timeInterval);
             showFinalScore();
