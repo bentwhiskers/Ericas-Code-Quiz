@@ -65,6 +65,10 @@ function startQuiz() {
 };
 
 function showQuestions() {
+    if (qCounter >= questions.length) {
+        showFinalScore();
+        return; // exit the function if no more questions
+    }
     var question = document.createElement('h3');
     question.textContent = questions[qCounter].q;
     quiz.innerHTML = " ";
@@ -131,7 +135,7 @@ function showFinalScore() {
 }
 // function to show highscores in a list using a for loop over the scoreList
 function showHighScoresList() {
-    highScore.innerHTML = "";
+    highScore.innerHTML = " ";
     for (var i = 0; i < scoreList.length; i++) {
         var list = document.createElement("li");
         list.textContent = scoreList[i].initials + ": " + scoreList[i].score;
